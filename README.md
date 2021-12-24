@@ -93,33 +93,33 @@ Wikipedia says:
 
 > Although his last name is commonly pronounced /ˈkliːni/ KLEE-nee or /kliːn/ KLEEN, Kleene himself pronounced it /ˈkleɪni/ KLAY-nee. His son, Ken Kleene, wrote: "As far as I am aware this pronunciation is incorrect in all known languages. I believe that this novel pronunciation was invented by my father."
 
-However, with apologies to the late Mr. Kleen, "Kleene expressions" is pronounced "Clean expressions" and not "Klein expression".
+However, with apologies to the late Mr. Kleene, "Kleene expressions" is pronounced "Clean expressions" and not "Klein expression".
 
 # Real World Examples
 
-```
+```python
 import ke
 
 def remove_parentheses(line):
     if ke.search("([0+ not ')'](", line):
-        raise ValueError()
+        raise ValueError("Nested parentheses found")
     return ke.sub("([0+ not ')'])", '', line)
 assert remove_parentheses('a(b)c(d)e') == 'ace'
 ```
 
 (the original is from a hackathon project I participated in and looks like this:)
 
-```
+```python
 import re
 
 def remove_parentheses(line):
     if re.search(r'\([^)]*\(', line):
-        raise ValueError()
+        raise ValueError("Nested parentheses found")
     return re.sub(r'\([^)]*\)', '', line)
 assert remove_parentheses('a(b)c(d)e') == 'ace'
 ```
 
-```
+```python
 import ke
 from django.urls import path, re_path
 
@@ -135,7 +135,7 @@ urlpatterns = [
 
 (the original is taken from Django documentation and looks like this:)
 
-```
+```python
 from django.urls import path, re_path
 
 from . import views
