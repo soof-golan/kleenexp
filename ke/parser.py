@@ -24,7 +24,7 @@ until_doublequote = ~r'[^"]*'
 whitespace      = ~r'[ \t\r\n]+|(?<=\])|(?=\[)'
 # '=' and ':' have syntactic meaning
 token           = ~r'[A-Za-z0-9!$%&()*+,./;<>?@\\^_`{}~-]+'
-range_endpoint  = ~r'[A-Za-z0-9]'
+range_endpoint  = ~r'0[xX][0-9a-fA-F]+|-?[0-9]+|[A-Za-z]'
 """
 )
 

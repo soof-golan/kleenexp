@@ -80,6 +80,12 @@ def test_range_macros():
     assert v.parse("[#a..b]") == C([R("a", "b")])
     assert v.parse("[#0..5]") == C([R("0", "5")])
     assert v.parse("[#a..9]") == C([R("a", "9")])
+    assert v.parse("[#11..93]") == C([R("11", "93")])
+    assert v.parse("[#-11..93]") == C([R("-11", "93")])
+    assert v.parse("[#0x0..0xFF]") == C([R("0x0", "0xFF")])
+    assert v.parse("[#0x33..0x5f]") == C([R("0x33", "0x5f")])
+    assert v.parse("[#0..255]") == C([R("0", "255")])
+    assert v.parse("[#000..255]") == C([R("000", "255")])
     assert v.parse("[#....]") == C([M("#....")])
 
 
